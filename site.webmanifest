@@ -1,0 +1,14 @@
+{
+  "name": "Fernrow Bakehouse & Coffee",
+  "short_name": "Fernrow",
+  "description": "Concept project — fictional bakehouse and coffee bar on SE Division, Portland.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f2e9",
+  "theme_color": "#f7f2e9",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/img/touch-icon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/touch-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

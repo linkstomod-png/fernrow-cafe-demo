@@ -1,0 +1,349 @@
+/* Fernrow — handoff pages (/order/, /reserve/) and the case study.
+   Loaded on top of site.css. Kept small on purpose. */
+
+.hand {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.hand__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hand__back { font-size: 0.875rem; color: var(--muted); }
+.hand__back:hover { color: var(--ink); }
+
+.hand__body {
+  display: grid;
+  align-content: center;
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+.hand__in { max-width: 40rem; }
+.hand__in h1 {
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  font-variation-settings: 'opsz' 96;
+  margin-bottom: 1.1rem;
+}
+.hand__cta { margin-top: clamp(1.5rem, 3vw, 2rem); }
+.hand__fine {
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+.hand__foot {
+  padding-block: 1.5rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Three-step diagram: website → platform → counter. */
+.flow {
+  display: grid;
+  gap: 0.75rem;
+  margin: clamp(2rem, 4vw, 2.75rem) 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+@media (min-width: 40rem) {
+  .flow { grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 1rem; }
+}
+.flow__step .flow__lbl {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin: 0 0 0.3rem;
+}
+.flow__step p { font-size: 0.875rem; margin: 0; color: var(--ink-soft); line-height: 1.5; }
+.flow__step--now {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  margin: -0.85rem -1rem;
+}
+.flow__arrow { color: var(--muted); justify-self: center; }
+.flow__arrow svg { width: 1.15rem; height: 1.15rem; }
+@media (max-width: 39.99rem) {
+  .flow__arrow { transform: rotate(90deg); margin-block: -0.15rem; }
+  .flow__step--now { margin: 0; }
+}
+
+/* ==========================================================================
+   Case study (/case/) — the walkthrough for someone deciding whether to buy
+   a site like this. Shares the header treatment with the handoff pages.
+   ========================================================================== */
+
+/* ---- Build facts, four short answers -------------------------------------- */
+.spec {
+  display: grid;
+  gap: 1px;
+  margin: clamp(2.25rem, 5vw, 3.25rem) 0 0;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+@media (min-width: 30rem) { .spec { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 58rem) { .spec { grid-template-columns: repeat(4, 1fr); } }
+.spec > div { background: var(--paper); padding: 1.15rem 1.25rem; }
+.spec dt {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin-bottom: 0.4rem;
+}
+.spec dd { margin: 0; font-size: 0.9375rem; line-height: 1.5; color: var(--ink-soft); }
+
+/* ---- Before / after ------------------------------------------------------- */
+.ba { display: grid; gap: clamp(2rem, 4vw, 2.5rem); }
+@media (min-width: 46rem) { .ba { grid-template-columns: 1fr 1fr; } }
+.ba__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+.ba__tag b { color: var(--ink); font-weight: 600; }
+.ba--after .ba__tag b { color: var(--brick); }
+
+/* ---- Phone frame ----------------------------------------------------------
+   A drawn bezel, not an image of a device. Keeps the two panels the same shape
+   so the comparison is about the page inside, not the hardware around it.
+   -------------------------------------------------------------------------- */
+.phone {
+  max-width: 19rem;
+  margin-inline: auto;
+  padding: 0.55rem;
+  background: #241d19;
+  border-radius: 1.9rem;
+  box-shadow: 0 1px 0 #4a3f37 inset, 0 18px 40px -22px rgba(27, 22, 19, 0.55);
+}
+.phone__scr {
+  position: relative;
+  aspect-ratio: 1 / 2;
+  overflow: hidden;
+  border-radius: 1.45rem;
+  background: var(--paper);
+}
+.phone__scr img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* ---- The "before": a link-in-bio page, drawn from scratch -----------------
+   Deliberately generic. No real service is depicted, no logo is used, and the
+   caption on the page says so — the point is the shape of that pattern, not
+   any particular product.
+   -------------------------------------------------------------------------- */
+.lp {
+  height: 100%;
+  padding: 1.4rem 1.1rem;
+  background: #f4f4f5;
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  justify-items: center;
+}
+/* Greys dark enough to clear 4.5:1 on their own tiles. The mock still reads as a
+   washed-out template page; it just does not fail contrast to say so. */
+.lp__av {
+  width: 3.4rem; height: 3.4rem; border-radius: 50%;
+  background: #d6d6da; display: grid; place-items: center;
+  font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; color: #58585f;
+}
+.lp__h { font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; color: #46464e; }
+.lp__b { font-family: var(--sans); font-size: 0.625rem; color: #58585f; text-align: center; line-height: 1.5; }
+.lp__btn {
+  width: 100%;
+  border: 1px solid #dcdce1;
+  border-radius: 0.4rem;
+  background: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  color: #55555e;
+}
+.lp__grid {
+  width: 100%;
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.lp__grid i { aspect-ratio: 1; background: #dcdce1; }
+.lp__grid i:nth-child(3n+2) { background: #d2d2d8; }
+.lp__grid i:nth-child(4) { background: #d8d8de; }
+
+/* ---- What each panel is actually showing you ------------------------------ */
+.notes { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: 0.6rem; }
+.notes li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.notes li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem;
+  top: 0.62em;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--muted);
+}
+.ba--after .notes li::before { background: var(--brick); height: 2px; }
+
+/* ---- Browser window frame ------------------------------------------------- */
+.win {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper-2);
+  box-shadow: 0 24px 50px -30px rgba(27, 22, 19, 0.4);
+}
+.win__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--rule);
+}
+.win__dots { display: flex; gap: 0.35rem; flex: none; }
+.win__dots i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--rule); }
+.win__url {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- Scaled live frames ---------------------------------------------------
+   Both device shots are the running site in an iframe, not a screenshot. The
+   iframe is laid out at its real width so the page inside picks the layout a
+   real visitor at that width would get, then case.js scales the whole thing
+   down to whatever room the column has. Scaling after layout is the only way
+   to keep the breakpoints honest — a narrower iframe would just show a
+   narrower site.
+   -------------------------------------------------------------------------- */
+.fit { position: relative; overflow: hidden; }
+.fit__in {
+  transform: scale(var(--k, 1));
+  transform-origin: 0 0;
+  border: 0;
+  display: block;
+  background: var(--paper);
+}
+/* Nothing scales without JS, so let the frame scroll sideways rather than
+   quietly clip the right-hand half of a 1180px page. */
+.no-js .fit { overflow: auto; }
+
+/* ---- Measured results ----------------------------------------------------- */
+.mx {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.mx caption {
+  text-align: left;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  padding-bottom: 0.9rem;
+  line-height: 1.6;
+}
+.mx th, .mx td { padding: 0.7rem 0.5rem; border-bottom: 1px solid var(--rule); text-align: right; }
+.mx thead th { font-family: var(--sans); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
+.mx tbody th { text-align: left; font-family: var(--sans); font-size: 0.9375rem; font-weight: 400; }
+/* Figures carry a unit, so a narrow column must not break "165 KiB" in half. */
+.mx td { font-size: 1rem; white-space: nowrap; }
+.mx tbody tr:last-child th, .mx tbody tr:last-child td { border-bottom: 0; }
+.mx__hi td { color: var(--brick); font-weight: 500; }
+.mx + .prose { margin-top: clamp(1.6rem, 4vw, 2.25rem); }
+
+/* ---- Scope: what a build like this covers, and what it does not ----------- */
+.scope { display: grid; gap: clamp(2rem, 4vw, 3rem); }
+@media (min-width: 46rem) { .scope { grid-template-columns: 1fr 1fr; } }
+.scope ul { list-style: none; margin: 1.1rem 0 0; padding: 0; display: grid; gap: 0.55rem; }
+.scope li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.scope li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.scope--in li::before { content: '\2713'; color: var(--olive); }
+.scope--out li::before { content: '\2014'; color: var(--muted); }
+.scope--out li { color: var(--muted); }
+
+/* ---- Three honest claims -------------------------------------------------- */
+.proof { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 52rem) { .proof { grid-template-columns: repeat(3, 1fr); } }
+.proof > div { background: var(--paper); padding: clamp(1.5rem, 3.5vw, 2.25rem); }
+.proof__n {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-variation-settings: 'opsz' 60;
+  line-height: 1;
+  color: var(--paper-3);
+  margin-bottom: 0.9rem;
+}
+.proof h3 { font-size: 1.2rem; font-variation-settings: 'opsz' 36; margin-bottom: 0.6rem; }
+.proof p { font-size: 0.9375rem; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+/* A wider bezel for the live frame, so a 375px page scales by roughly 1 on a
+   desktop column instead of being shrunk twice over. The screen corner radius
+   moves onto .fit, which is the element doing the clipping here. */
+.phone--live { max-width: 24.6rem; }
+.phone--live .fit { border-radius: 1.45rem; background: var(--paper); }
+
+/* ---- Section note under a frame ------------------------------------------- */
+.capt {
+  margin-top: 1.1rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 36rem;
+}
+.cs-end { text-align: center; }
+.cs-end .prose { margin-inline: auto; }
+.cs-end .btn-row { justify-content: center; margin-top: 1.75rem; }

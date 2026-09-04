@@ -1,0 +1,22 @@
+# Presentation plates — full-page screenshots of this site, captured for use as
+# portfolio imagery. They live on disk next to the project but are not part of
+# the website, and at 35 MB they have no business in a deployment.
+shots/
+
+# Local tooling output
+node_modules/
+.vercel/
+
+# Never commit credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+.netrc
+.git-credentials
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

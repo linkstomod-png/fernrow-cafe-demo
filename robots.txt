@@ -1,0 +1,9 @@
+# Fernrow Bakehouse & Coffee — concept project, fictional business.
+# Not a real café. Nothing here should be treated as a live local listing.
+
+User-agent: *
+Allow: /
+Disallow: /order/
+Disallow: /reserve/
+
+Sitemap: https://fernrow.cafe/sitemap.xml

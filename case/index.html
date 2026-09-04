@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How this site was built — Fernrow Bakehouse concept project</title>
+<meta name="description" content="A walkthrough of the Fernrow Bakehouse concept build: what a one-page café website holds, where its ordering and booking buttons lead, and the measured performance result.">
+<meta name="theme-color" content="#f7f2e9">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/pages.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+<script src="/assets/js/case.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<p class="ribbon">
+  Concept project — fictional business created for demonstration.
+  <b>Fernrow Bakehouse is not a real café.</b>
+  <a href="/">See the site &rarr;</a>
+</p>
+
+<div class="shell">
+  <div class="hand__top">
+    <a class="wordmark" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M12 21V7"/>
+        <path d="M12 12c0-3 2.4-5.4 5.4-5.4C17.4 9.6 15 12 12 12Z"/>
+        <path d="M12 17c0-2.6 2-4.6 4.6-4.6C16.6 15 14.6 17 12 17Z"/>
+        <path d="M12 12C9 12 6.6 9.6 6.6 6.6 9.6 6.6 12 9 12 12Z"/>
+        <path d="M12 17c-2.6 0-4.6-2-4.6-4.6C10 12.4 12 14.4 12 17Z"/>
+      </svg>
+      Fernrow
+    </a>
+    <a class="hand__back" href="/">&larr; Back to the site</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="section">
+  <div class="shell">
+    <p class="eyebrow">Concept project &middot; portfolio piece</p>
+    <h1 class="h-sec">How this site was built</h1>
+    <p class="lede prose">
+      Fernrow Bakehouse is invented. The website is real — hand-written, running,
+      and measured. This page walks through what is on it, where the Order and
+      Book buttons lead, and what the whole thing weighs.
+    </p>
+
+    <dl class="spec">
+      <div>
+        <dt>What it is</dt>
+        <dd>One page, plus two short handoff screens. No blog, no login, no second menu.</dd>
+      </div>
+      <div>
+        <dt>Built with</dt>
+        <dd>Hand-written HTML and CSS, 3&nbsp;KB of JavaScript. No framework, no build step.</dd>
+      </div>
+      <div>
+        <dt>First mobile visit</dt>
+        <dd>165&nbsp;KB across nine requests, photography included.</dd>
+      </div>
+      <div>
+        <dt>Measured</dt>
+        <dd>Lighthouse 97 on mobile, 100 on desktop. Method further down.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section section--paper2">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">The brief, written by me</h2>
+      <p class="sec-head__note">
+        No client, so the requirements had to come from somewhere honest: the
+        questions people actually open a café's website to answer.
+      </p>
+    </div>
+    <div class="prose">
+      <p>
+        Someone standing on the pavement with a phone in one hand wants four things,
+        roughly in this order: <b>Is it open right now? What is on, and what does it
+        cost? Where is it? How do I order, or hold a table?</b>
+      </p>
+      <p>
+        Every section of the page answers one of those. Anything that answered none of
+        them did not get built.
+      </p>
+    </div>
+    <p class="mech prose">
+      <b>Why one page.</b> A café's website gets opened on a phone, usually by someone
+      already close by, usually for less than a minute. Splitting the menu, the hours
+      and the address across four pages adds three taps and three chances to give up.
+      So: one page, in the order the questions get asked.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">Before, and after</h2>
+      <p class="sec-head__note">
+        The left-hand panel is a drawing of a common pattern — a link page and a
+        photo grid. It is not a screenshot of anyone's page, no particular service
+        is shown, and Fernrow never had one: it is fictional, so it had nothing at
+        all before this build.
+      </p>
+    </div>
+
+    <div class="ba">
+      <div class="ba--before">
+        <p class="ba__tag"><b>Before</b> &middot; representative example, drawn</p>
+        <div class="phone">
+          <div class="phone__scr">
+            <div class="lp" aria-hidden="true">
+              <span class="lp__av">FB</span>
+              <span class="lp__h">@a_local_cafe</span>
+              <span class="lp__b">coffee &amp; bread · dm for bookings</span>
+              <span class="lp__btn">Menu (PDF)</span>
+              <span class="lp__btn">Order here</span>
+              <span class="lp__btn">Find us</span>
+              <span class="lp__btn">Follow</span>
+              <span class="lp__grid">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <h3 class="h-sub">A link page and a photo grid</h3>
+        <ul class="notes">
+          <li>Opening hours live in a caption from three weeks ago</li>
+          <li>The menu is a PDF that opens in another app and needs pinching</li>
+          <li>Prices are wherever they were last posted</li>
+          <li>Nothing on the page a search engine can read as a menu</li>
+          <li>The layout belongs to whichever platform is hosting it</li>
+        </ul>
+      </div>
+
+      <div class="ba--after">
+        <p class="ba__tag"><b>After</b> &middot; the build on this site</p>
+        <div class="phone">
+          <div class="phone__scr">
+            <picture>
+              <source type="image/avif" sizes="(min-width: 46rem) 18rem, 17rem"
+                srcset="/assets/img/case-after-450.avif 450w, /assets/img/case-after-600.avif 600w,
+                        /assets/img/case-after-750.avif 750w">
+              <img src="/assets/img/case-after-600.webp" width="750" height="1500"
+                sizes="(min-width: 46rem) 18rem, 17rem"
+                srcset="/assets/img/case-after-450.webp 450w, /assets/img/case-after-600.webp 600w,
+                        /assets/img/case-after-750.webp 750w"
+                alt="The Fernrow homepage on a phone: disclosure ribbon, wordmark with an Order online button, then a full-bleed photograph of croissants behind the headline Bread first. Coffee that keeps up., with Order online and Book a table buttons beneath."
+                loading="lazy" decoding="async">
+            </picture>
+          </div>
+        </div>
+        <h3 class="h-sub">A page of its own</h3>
+        <ul class="notes">
+          <li>Hours that know what day it is, and name the next opening</li>
+          <li>The whole menu as text, at a size you can read one-handed</li>
+          <li>Order and Book within thumb reach on every screen</li>
+          <li>Address, a locator map and a directions link in the page itself</li>
+          <li>The layout is the café's, and nobody else's</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section section--paper2">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">On a phone</h2>
+      <p class="sec-head__note">
+        Not a screenshot. The frame below is the live site, loaded at 375&nbsp;px —
+        the width of a small iPhone — and then scaled down to fit this column. You
+        can scroll inside it.
+      </p>
+    </div>
+
+    <div class="phone phone--live">
+      <div class="fit" data-w="375" data-h="812">
+        <iframe class="fit__in" src="/" width="375" height="812" loading="lazy"
+          title="The Fernrow Bakehouse homepage, live, at a 375-pixel phone width"></iframe>
+      </div>
+    </div>
+
+    <p class="capt">
+      Mobile was designed first, not narrowed down afterwards. The header keeps a
+      wordmark and one button; a second bar carrying Order and Book slides up once
+      you pass the hero, so both stay inside thumb reach for the whole page.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">On a desktop</h2>
+      <p class="sec-head__note">
+        The same live page at 1180&nbsp;px. Same content in the same order — the menu
+        opens into two columns, hours and map sit side by side, and the header gains
+        a short anchor nav.
+      </p>
+    </div>
+
+    <div class="win">
+      <div class="win__bar">
+        <span class="win__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="win__url">fernrow.cafe</span>
+      </div>
+      <div class="fit" data-w="1180" data-h="760">
+        <iframe class="fit__in" src="/" width="1180" height="760" loading="lazy"
+          title="The Fernrow Bakehouse homepage, live, at a 1180-pixel desktop width"></iframe>
+      </div>
+    </div>
+
+    <p class="capt">
+      One stylesheet, one page, no separate mobile site and no redirect. The layout
+      changes at three widths and nothing is dropped at any of them.
+    </p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">Where the buttons actually go</h2>
+      <p class="sec-head__note">
+        This is the part worth being plain about. The site does not take orders and
+        does not hold tables. It hands the visitor to the systems the café already
+        pays for, in one tap, with the decision already made.
+      </p>
+    </div>
+
+    <div class="panels">
+      <div class="panel">
+        <p class="panel__via"><i aria-hidden="true"></i>Ordering &middot; via Toast</p>
+        <h3>Order online</h3>
+        <p>
+          Every Order button on the site points at one destination. In this concept
+          that is <a href="/order/">a handoff screen</a> standing in for a Toast
+          online-ordering page, so the whole journey can be walked without sending
+          anyone to a real café's checkout.
+        </p>
+        <p class="panel__fine">
+          On a real build the button carries the café's own ordering URL — Toast,
+          Square, Deliveroo, Uber Eats, ChowNow, whatever they already run.
+        </p>
+      </div>
+      <div class="panel">
+        <p class="panel__via"><i aria-hidden="true"></i>Reservations &middot; via Resy</p>
+        <h3>Book a table</h3>
+        <p>
+          Same shape. Book a table opens
+          <a href="/reserve/">a matching handoff screen</a> in place of a Resy
+          booking page, and the reservation itself would be made in Resy.
+        </p>
+        <p class="panel__fine">
+          A café that takes bookings by phone instead gets a tap-to-call button in
+          the same position, and the diagram loses its middle step.
+        </p>
+      </div>
+    </div>
+
+    <p class="mech prose">
+      <b>Nothing here processes a payment.</b> No cart, no card field, no account,
+      no database — the site is a folder of static files. That is deliberate. The
+      ordering platform a café already uses is wired to their kitchen printer, their
+      stock counts and their payouts, and replacing it is not what this build is
+      for. Feeding it cleanly is.
+    </p>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">Measured, not estimated</h2>
+      <p class="sec-head__note">
+        Speed is the one claim on this page that can be checked, so here is the
+        actual output rather than a badge. Every figure below came out of a run
+        against this build.
+      </p>
+    </div>
+
+    <table class="mx">
+      <caption>
+        Lighthouse 12.8.2 in headless Chrome 152, default emulation and simulated
+        throttling. Mobile is the median of six runs at 412&times;823, DPR 1.75;
+        desktop is a single run at 1350&times;940. Measured 4 September 2026
+        against this build on a local server.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Homepage</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Desktop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="mx__hi">
+          <th scope="row">Performance</th>
+          <td>97</td>
+          <td>100</td>
+        </tr>
+        <tr><th scope="row">Accessibility</th><td>100</td><td>100</td></tr>
+        <tr><th scope="row">Best practices</th><td>100</td><td>100</td></tr>
+        <tr><th scope="row">SEO</th><td>100</td><td>100</td></tr>
+        <tr><th scope="row">Largest Contentful Paint</th><td>2.0 s</td><td>0.5 s</td></tr>
+        <tr><th scope="row">First Contentful Paint</th><td>1.5 s</td><td>0.4 s</td></tr>
+        <tr><th scope="row">Speed Index</th><td>3.9 s</td><td>0.6 s</td></tr>
+        <tr><th scope="row">Total Blocking Time</th><td>71 ms</td><td>0 ms</td></tr>
+        <tr><th scope="row">Cumulative Layout Shift</th><td>0.00</td><td>0.00</td></tr>
+        <tr><th scope="row">Weight, first visit</th><td>165 KiB</td><td>294 KiB</td></tr>
+        <tr><th scope="row">Requests</th><td>9</td><td>10</td></tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>
+        Nine requests is the entire first visit on a phone: the page itself, one
+        stylesheet, two subset fonts, one script, one photograph, and the small
+        remainder — the web manifest and the icon. Desktop weighs more, not less,
+        because a wide screen is sent a wider hero and reaches a second full-width
+        photograph before the measurement ends.
+      </p>
+      <p>
+        The mobile Speed Index is the one figure that moves between runs, and it is
+        the reason the mobile score is 97 rather than 100. Five of the six runs
+        measured about 3.9&nbsp;s; one measured 1.6&nbsp;s. Everything else stayed
+        put — same paint times, same layout shift, same bytes, same requests. The
+        cause is the display font: on a deliberately throttled connection it
+        sometimes arrives before the first paint and sometimes just after, and
+        Speed&nbsp;Index scores how finished the screen looks rather than how soon
+        it is usable. The alternative is to let the page paint in a fallback face
+        and never swap, which reads worse and measured worse for accessibility, so
+        the font stays. I am quoting the slower of the two numbers.
+      </p>
+      <p>
+        Two flags stay open on purpose. Lighthouse would like the stylesheet inlined
+        into the page rather than fetched, and it would like the CSS minified. It
+        estimates the first of those at up to 150&nbsp;ms on a throttled phone and
+        the second at about 2&nbsp;KiB. Both need a build step, and this project
+        does not have one — the files that get served are the files that were
+        written, comments and all, which is what makes them straightforward to hand
+        over and edit a year later. That was a deliberate trade, and this is the
+        size of it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">What's on the page, and what isn't</h2>
+      <p class="sec-head__note">
+        A one-page site is defined as much by what it leaves out. Both columns are
+        decisions, not gaps.
+      </p>
+    </div>
+
+    <div class="scope">
+      <div class="scope--in">
+        <h3 class="h-sub">On the page</h3>
+        <ul>
+          <li>One page built around the café's own menu, hours, address and photographs</li>
+          <li>The full menu as selectable text — sections, prices, dietary marks</li>
+          <li>Hours that highlight today and name the next opening</li>
+          <li>Order and Book buttons wired to the platforms the café already uses</li>
+          <li>Address, a locator map, and a directions link that opens the visitor's map app</li>
+          <li>Tap-to-call number, email, and a short message form</li>
+          <li>Photographs cropped, graded and encoded at a width for each screen size</li>
+          <li>Hours, address and coordinates in machine-readable markup</li>
+          <li>Title, description, social preview card, icon, web manifest, 404 page</li>
+          <li>Two handoff screens, and hosting with the site running on it</li>
+        </ul>
+      </div>
+      <div class="scope--out">
+        <h3 class="h-sub">Deliberately not here</h3>
+        <ul>
+          <li>Ordering, carts and card payments — those stay on the café's platform</li>
+          <li>A booking engine, table map or waitlist — bookings stay in their tool</li>
+          <li>Till, POS or stock integration</li>
+          <li>Delivery zones, postcode checks, dispatch</li>
+          <li>A blog, a login, customer accounts</li>
+          <li>A second page for anything the one page already answers</li>
+          <li>A photographer on location — the café's own photographs are prepared and used</li>
+          <li>Multi-location directories, franchise pages, a webshop</li>
+          <li>Cookie banners, chat bubbles, popups, newsletter interruptions</li>
+          <li>Analytics or tracking scripts of any kind on this build</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mech prose">
+      <b>One honest catch.</b> The ordering platform already holds a menu, and now
+      the website holds one too — two places to edit when the soup changes. Worth
+      knowing before you commission one. It is still worth having: the menu inside
+      an ordering platform sits behind a tap, is invisible to search engines, and
+      prices are the second thing anybody looks for. So on this build the page carries
+      the readable menu, and the ordering platform stays the record of what is
+      actually available today.
+    </p>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="shell">
+    <div class="sec-head">
+      <h2 class="h-sec">Three things this page is evidence for</h2>
+      <p class="sec-head__note">
+        Only three, and each one is visible in the build above rather than asserted.
+      </p>
+    </div>
+
+    <div class="proof">
+      <div>
+        <p class="proof__n" aria-hidden="true">01</p>
+        <h3>Nothing to buy, nothing to set up</h3>
+        <p>
+          No plugin licence, no theme purchase, no monthly builder subscription, no
+          dashboard to learn. The whole site is a folder of files on hosting that
+          comes with it. There is nothing here a café owner has to configure, and
+          nothing that quietly starts charging in month two.
+        </p>
+      </div>
+      <div>
+        <p class="proof__n" aria-hidden="true">02</p>
+        <h3>A short timeline, because the scope is short</h3>
+        <p>
+          Three days is realistic for this because of the right-hand column above.
+          One page, no ordering system to integrate, no booking engine to configure
+          — the work is design, copy, photography and wiring, and all of it fits in
+          days rather than weeks.
+        </p>
+      </div>
+      <div>
+        <p class="proof__n" aria-hidden="true">03</p>
+        <h3>Your menu, your photographs, your links</h3>
+        <p>
+          The menu above is set as a real menu, in the sections a bakehouse actually
+          uses, with prices that make sense together. That is the difference between
+          a site built around a café and a restaurant template with the words
+          swapped out.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section cs-end">
+  <div class="shell">
+    <p class="eyebrow">Concept project</p>
+    <h2 class="h-sec">See it running</h2>
+    <p class="lede prose">
+      The site is the portfolio piece — this page is only the walkthrough. Open it
+      on the phone in your pocket, because that is the screen it was built for.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="/">Open the site</a>
+      <a class="btn btn--ghost" href="/#menu">Jump to the menu</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <p class="disclose">
+      <b>Concept project.</b> Fernrow Bakehouse &amp; Coffee is a fictional business
+      invented to demonstrate what a one-page website for an independent café looks
+      like. It has no premises, no phone line and no kitchen; the name, address,
+      menu and prices are made up, and the Order and Book buttons lead to handoff
+      screens rather than to Toast or Resy. No client was involved and no results are
+      claimed. Photography is licensed stock from Unsplash, colour-graded for this
+      concept &mdash; credits are listed in
+      <a href="/assets/img/CREDITS.csv">assets/img/CREDITS.csv</a>.
+      <a href="/">Back to the site &rarr;</a>
+    </p>
+
+    <div class="foot__end">
+      <span>&copy; 2026 Fernrow Bakehouse &amp; Coffee &mdash; a concept project, not a real business.</span>
+      <span>Measured 4 September 2026. No cookies, no trackers, no analytics.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
