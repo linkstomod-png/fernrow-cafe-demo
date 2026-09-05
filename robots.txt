@@ -6,4 +6,4 @@ Allow: /
 Disallow: /order/
 Disallow: /reserve/
 
-Sitemap: https://fernrow.cafe/sitemap.xml
+Sitemap: https://fernrow-cafe-demo.vercel.app/sitemap.xml
